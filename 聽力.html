@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		#option1 label {
+            margin: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+    		flex-direction: column;
+        }
+        #option2 label {
+            margin: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+    		flex-direction: column;
+        }
+
+        body {
+    	display: flex;
+    	flex-direction: column;
+    	min-height: 100vh;
+    	justify-content: space-between;
+		}
+
+        label {
+        margin: 10px;
+        font-size: 18px;
+        position: relative;
+        }
+
+        button {      
+        align-self: center;
+        background-color: #4CAF50; /* 背景顏色 */
+   		color: white; /* 文字顏色 */
+    	padding: 15px 20px; /* 內邊距 */
+    	font-size: 18px; /* 文字大小 */
+    	border: none; /* 移除邊框 */
+    	border-radius: 5px; /* 圓角 */
+    	cursor: pointer; /* 添加游標效果 */
+        }
+
+        button:hover {
+    	background-color: #45a049; /* 滑鼠懸停時的背景顏色 */
+		}
+
+     </style>
+</head>
+<body>
+	<h2>PART 1 照片描述</h2>
+
+	<h3>請選出最符合照片描述的句子</h3>
+	<h4>1.</h4>
+<img src="ques1.jpg"heigh="500"width="500">
+	<audio controls>
+        <source src="ques1.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+
+	<div id="option1">
+        <label for="option-a1">A</label>
+        <input type="radio" name="answer" id="option-a">
+
+        <label for="option-b1">B</label>
+        <input type="radio" name="answer" id="option-b">
+
+        <label for="option-c1">C</label>
+        <input type="radio" name="answer" id="option-c">
+
+        <label for="option-d1">D</label>
+        <input type="radio" name="answer" id="option-d">
+    </div>
+    <br><br><br><br><br>
+    <h3>請選出最符合照片描述的句子</h3>
+    <h4>2.</h4>
+<img src="ques2.jpg"heigh="500"width="500">
+    <audio controls>
+        <source src="ques2.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<div id="option2">
+        <label for="option-a2">A</label>
+        <input type="radio" name="answer" id="option-a">
+
+        <label for="option-b2">B</label>
+        <input type="radio" name="answer" id="option-b">
+
+        <label for="option-c2">C</label>
+        <input type="radio" name="answer" id="option-c">
+
+        <label for="option-d2">D</label>
+        <input type="radio" name="answer" id="option-d">
+     </div>
+     <br><br><br><br><br>
+
+     <h2>PART 2 應答問題</h2>
+     <h3>請選擇問題或陳述的最佳答案</h3>
+     <h4>3.Mark your answer on your answer sheet.</h4>
+     <audio controls>
+        <source src="ques3.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<div id="option3">
+        <label for="option-a3">A</label>
+        <input type="radio" name="answer" id="option-a">
+
+        <label for="option-b3">B</label>
+        <input type="radio" name="answer" id="option-b">
+
+        <label for="option-c3">C</label>
+        <input type="radio" name="answer" id="option-c">
+
+    </div>
+    <br><br><br>
+    <h3>請選擇問題或陳述的最佳答案</h3>
+    <h4>4.Mark your answer on your answer sheet.</h4>
+    <audio controls>
+        <source src="ques4.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<div id="option4">
+        <label for="option-a4">A</label>
+        <input type="radio" name="answer" id="option-a">
+
+        <label for="option-b4">B</label>
+        <input type="radio" name="answer" id="option-b">
+
+        <label for="option-c4">C</label>
+        <input type="radio" name="answer" id="option-c">
+
+    </div>
+    <br><br><br><br><br>
+	<h2>PART 3 簡短問答</h2>
+    <h3>您會聽到兩個人以上的對話。並根據內容請選擇每個問題的最佳答案</h3>
+    <audio controls>
+        <source src="ques5.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<h4>5. Why is the woman calling?</h4>
+	<div id="option5">
+        <label for="option-a5">(A) To cancel an order</label>
+        <input type="radio" name="answer" id="option-a">
+        <br><br>
+        <label for="option-b5">(B) To complain about a product</label>
+        <input type="radio" name="answer" id="option-b">
+        <br><br>
+        <label for="option-c5">(C) To redeem a gift card</label>
+        <input type="radio" name="answer" id="option-c">
+        <br><br>
+        <label for="option-d5">(D) To renew a warranty</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+    <br><br><br>
+    <h4>6. What does the man ask the woman about?</h4>
+	<div id="option6">
+        <label for="option-a6">(A) A model name</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b6">(B) A brand of coffee</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c6">(C) A catalog number</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d6">(D) A date of purchase</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+    <br><br><br>
+    <h4>7. What does the man offer to do?</h4>
+	<div id="option7">
+        <label for="option-a7">(A) Provide a discount</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b7">(B) Send a free sample</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c7">(C) Extend a warranty</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d7">(D) Issue a refund</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+    <audio controls>
+        <source src="ques6.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<h4>8. Where do the speakers work?</h4>
+	<div id="option8">
+        <label for="option-a8">(A) At a hotel</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b8">(B) At a department store</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c8">(C) At a restaurant</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d8">(D) At a call center</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+
+    <h4>9. What does the man ask about?</h4>
+	<div id="option9">
+        <label for="option-a9">(A) How many people have applied for a promotion</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b9">(B) If a manager is in the lobby</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c9">(C) Whether a position is available</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d9">(D) When new shifts will be assigned</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+
+    <h4>10. What does the woman say the man should be prepared to do?</h4>
+	<div id="option10">
+        <label for="option-a10">(A) Handle customer complaints</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b10">(B) Work within a budget</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c10">(C) Get to know local clients</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d10">(D) Work evening hour</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+
+
+<img src="ques8.jpg"heigh="500"width="500">
+    <audio controls>
+        <source src="ques8.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.       
+	</audio>
+	<h4>11. What does the woman ask the man to do?</h4>
+	<div id="option11">
+        <label for="option-a11">(A) Order some equipment</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b11">(B) Find a new vendor</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c11">(C) Repair a laptop</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d11">(D) Contact a job candidate</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+
+    <h4>12. What problem does the man mention?</h4>
+	<div id="option12">
+        <label for="option-a12">(A) A designer has left the company.</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b12">(B) A supplier has increased its prices.</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c12">(C) A computer model has been discontinued.</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d12">(D) A departmental budget has been reduced.</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <br><br><br>
+
+    <h4>13. Look at the graphic. What size screen will the man order?</h4>
+	<div id="option13">
+        <label for="option-a13">(A) 11 inches</label>
+        <input type="radio" name="answer" id="option-a">
+<br><br>
+        <label for="option-b13">(B) 13 inches</label>
+        <input type="radio" name="answer" id="option-b">
+<br><br>
+        <label for="option-c13">(C) 15 inches</label>
+        <input type="radio" name="answer" id="option-c">
+<br><br>
+        <label for="option-d13">(D) 17 inches</label>
+        <input type="radio" name="answer" id="option-d">
+
+    </div>
+
+    <button type="button" onclick="checkAnswers()">提交答案</button>
+
+
+    <script>
+        function checkAnswers() {
+            // 在這裡實現檢查答案並顯示分數的邏輯
+            alert("這裡應該實現檢查答案並顯示分數的邏輯。");
+        }
+    </script>
+</body>
+</html>
