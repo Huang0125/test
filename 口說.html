@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Chat</title>
+    <style>
+
+    	body {
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:url('jpg.jpg')no-repeat;
+            background-size:cover;
+            background-position:center;
+
+        }
+        h1{
+        	color:white;
+            align-items:center;
+
+        }
+
+        #startButton {
+            padding: 8px;
+            cursor: pointer;
+            background:transparent;
+            margin: auto;
+            border:2px solid rgba(255,255,255,.5);
+            color:white;
+            margin-right:500px;
+        }
+
+		#conversation {
+  	 	 	display: flex;
+   		 	flex-direction: column;
+   		 	align-items: flex-start; 
+}
+
+		.user-message,
+		.system-message {
+    		max-width: 80%;
+    		margin-bottom: 10px;
+    		color:white;
+}
+
+		.system-message {
+    		align-self: flex-end;
+    		color:white;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Voice Chat</h1>
+    
+    <button id="startButton">Start Listening</button>
+    <div id="conversation"></div>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const conversationDiv = document.getElementById('conversation');
+
+        const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+        recognition.lang = 'en-US';
+
+        startButton.addEventListener('click', () => {
+            recognition.start();
+        });
+
+        recognition.onresult = (event) => {
+            const result = event.results[0][0].transcript;
+            showUserMessage(result);
+            respondToUser(result);
+        };
+
+        function showUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('user-message');
+            messageDiv.textContent = `You: ${message}`;
+            conversationDiv.appendChild(messageDiv);
+        }
+
+        function showSystemMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('system-message');
+            messageDiv.textContent = `范景翔: ${message}`;
+            conversationDiv.appendChild(messageDiv);
+        }
+
+        function respondToUser(userInput) {
+
+            const systemResponse = getSystemResponse(userInput);
+            showSystemMessage(systemResponse);
+        }
+
+        function getSystemResponse(userInput) {
+        	const greetings = ['hello', 'what\'s your name','What’s up'];
+    
+    		if (greetings.some(greetings => userInput.includes(greetings))) {
+        	const responses = ["Hi my name is Kennys. It's a pleasure to chat with you.", "Hi my name is Kennys.", "I'm Kennys. What's your name? "];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings4 = ['Me too','My name is Diego'];
+    
+    		if (greetings4.some(greetings4 => userInput.includes(greetings4))) {
+        	const responses = ["Good to meet you,what you up to today "];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+
+
+            const greetings1 = ['My name is Diego,how are you','how are you', 'How do you do','How did it go today?'];
+    
+    		if (greetings1.some(greetings1 => userInput.includes(greetings1))) {
+        	const responses = ["Nothing, how about you?  ", "I'm doing well,how about you?", "I get by. how about you?"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings2 = ['I\'m fine', 'I\'m good','Not bad','great','good','nice','excellent'];
+    
+    		if (greetings2.some(greetings2 => userInput.includes(greetings2))) {
+        	const responses = ["That's great. whats your plan for today."];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+
+    		const greetings3 = ['I\'m feel bad','I have a bad day','sucks'];
+
+    		if (greetings3.some(greetings3 => userInput.includes(greetings3))) {
+        	const responses = ["That's sad. what is bothering you?"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+
+    		 else {
+                return "I didn't understand that.";
+            }
+        }
+    </script>
+</body>
+</html>
