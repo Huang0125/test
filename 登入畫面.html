@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet"href="BACKGROUND.css">
+
+	<style>
+
+		body {
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:url('0.jpg')no-repeat;
+            background-size:cover;
+            background-position:center;
+
+        }
+		header{
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			padding:20px 100px;
+			display:flex;
+			align-items:center;
+			z-index:99;
+		}
+		.logo{
+			font-size:2em;
+			color:WHITE;
+			user-select:none;
+		}
+		.wrapper{
+			position:relative;
+			width:400px;
+			height:440px;
+			background:transparent;
+			border:2px solid rgba(255,255,255,.5);
+			border-radius:20px;
+			backdrop-filter:blur(20px);
+			box-shadow:0 0 30px rgba(0,0,0,.5);
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h2 class="logo">Users</h2>
+
+	</header>
+
+	<div class="wrapper">
+		<div class="form-box login">
+			<h2>Login</h2>
+
+	<form id="loginForm" action="process_form.php" method="post" onsubmit="return hello()">
+		<label for="username">使用者名稱</label>
+		<input type="text" id="username" name="username"required>
+		<input type="submit" value="提交" >
+	</form>
+	</div>
+	</div>
+<script>
+	function hello(){
+		
+		var user = document.getElementById('username').value;
+    	localStorage.setItem('username', user);
+    	console.log('Stored username: ' + user);
+		window.location.href = 'https://huang0125.github.io/test/介面.html';
+
+        return false;
+	}
+</script>
+</body>
+</html>
