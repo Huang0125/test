@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		#option label {
+            margin: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+    		flex-direction: column;
+        }
+
+
+        body {
+    	display: flex;
+    	flex-direction: column;
+    	min-height: 100vh;
+    	justify-content: space-between;
+    	background-color: rgb(255, 255, 200);
+        background-size:cover;
+        background-position:center;
+
+		}
+
+
+        label {
+        margin: 10px;
+        font-size: 18px;
+        position: relative;
+        }
+
+        button {      
+        align-self: center;
+        background-color: #4CAF50;
+   		color: white;
+    	padding: 15px 20px; 
+    	font-size: 18px; 
+    	border: none; 
+    	border-radius: 5px;
+    	cursor: pointer; 
+        }
+
+        button:hover {
+    	background-color: #45a049; 
+		}
+
+     </style>
+</head>
+<body>
+	<form>
+		<h2>PART 1 照片描述</h2>
+
+		<h3>請選出最符合照片描述的句子</h3>
+		<h4>1.</h4>
+	<img src="ques1.jpg"heigh="500"width="500">
+		<audio controls>
+       	 <source src="ques1.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+
+		<div id="option">
+        	<input type="radio" name="a1" value="(A)1">(A)
+
+        	<input type="radio" name="a1" value="(B)1">(B)
+
+        	<input type="radio" name="a1" value="(C)1">(C)
+
+        	<input type="radio" name="a1" value="(D)1">(D)
+    	</div>
+    	<br><br><br><br><br>
+    	<h3>請選出最符合照片描述的句子</h3>
+    	<h4>2.</h4>
+	<img src="ques2.jpg"heigh="500"width="500">
+    	<audio controls>
+        	<source src="ques2.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+		<div id="option">
+        	<input type="radio" name="a2" value="(A)2">(A)
+
+       	 	<input type="radio" name="a2" value="(B)2">(B)
+
+        	<input type="radio" name="a2" value="(C)2">(C)
+
+        	<input type="radio" name="a2" value="(D)2">(D)
+     	</div>
+     	<br><br><br><br><br>
+
+     	<h2>PART 2 應答問題</h2>
+     	<h3>請選擇問題或陳述的最佳答案</h3>
+     	<h4>3.Mark your answer on your answer sheet.</h4>
+     	<audio controls>
+       	 <source src="ques3.mp3" type="audio/mp3">
+       	 Your browser does not support the audio tag.       
+		</audio>
+		<div id="option">
+    	    <input type="radio" name="a3" value="(A)3">(A)
+
+       	 	<input type="radio" name="a3" value="(B)3">(B)
+
+        	<input type="radio" name="a3" value="(C)3">(C)
+
+    	</div>
+    	<br><br><br>
+    	<h3>請選擇問題或陳述的最佳答案</h3>
+    	<h4>4.Mark your answer on your answer sheet.</h4>
+    	<audio controls>
+        	<source src="ques4.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+		<div id="option">
+        	<input type="radio" name="a4" value="(A)4">(A)
+
+        	<input type="radio" name="a4" value="(B)4">(B)
+
+        	<input type="radio" name="a4" value="(C)4">(C)
+
+    	</div>
+    	<br><br><br><br><br>
+		<h2>PART 3 簡短問答</h2>
+    	<h3>您會聽到兩個人以上的對話。並根據內容請選擇每個問題的最佳答案</h3>
+    	<audio controls>
+        	<source src="ques5.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+		<h4>5. Why is the woman calling?</h4>
+		<div id="option">
+        	<input type="radio" name="a5" value="(A) To cancel an order">(A) To cancel an order
+        	<br><br>
+        	<input type="radio" name="a5" value="(B) To complain about a product">(B) To complain about a product
+        	<br><br>
+        	<input type="radio" name="a5" value="(C) To redeem a gift card">(C) To redeem a gift card
+        	<br><br>
+        	<input type="radio" name="a5" value="(D) To renew a warranty">(D) To renew a warranty
+
+
+    	</div>
+    	<br><br><br>
+    	<h4>6. What does the man ask the woman about?</h4>
+		<div id="option">
+			<input type="radio" name="a6" value="(A) A model name">(A) A model name
+
+	<br><br>
+			<input type="radio" name="a6" value="(B) A brand of coffee">(B) A brand of coffee
+
+	<br><br>
+			<input type="radio" name="a6" value="(C) A catalog number">(C) A catalog number
+
+	<br><br>
+			<input type="radio" name="a6" value="(D) A date of purchase">(D) A date of purchase
+
+
+    	</div>
+		<br><br><br>
+    	<h4>7. What does the man offer to do?</h4>
+		<div id="option">
+			<input type="radio" name="a7" value="(A) Provide a discount">(A) Provide a discount
+	<br><br>
+			<input type="radio" name="a7" value="(B) Send a free sample">(B) Send a free sample
+
+	<br><br>
+			<input type="radio" name="a7" value="(C) Extend a warranty">(C) Extend a warranty
+
+	<br><br>
+			<input type="radio" name="a7" value="(D) Issue a refund">(D) Issue a refund
+
+
+    	</div>
+
+    	<br><br><br>
+    	<audio controls>
+        	<source src="ques6.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+		<h4>8. Where do the speakers work?</h4>
+		<div id="option">
+			<input type="radio" name="a8" value="(A) At a hotel">(A) At a hotel
+
+	<br><br>
+			<input type="radio" name="a8" value="(B) At a department store">(B) At a department store
+
+	<br><br>
+			<input type="radio" name="a8" value="(C) At a restaurant">(C) At a restaurant
+
+	<br><br>
+			<input type="radio" name="a8" value="(D) At a call center">(D) At a call center
+
+
+    	</div>
+
+    	<br><br><br>
+
+    	<h4>9. What does the man ask about?</h4>
+		<div id="option">
+			<input type="radio" name="a9" value="(A) How many people have applied for a promotion">(A) How many people have applied for a promotion
+
+	<br><br>
+			<input type="radio" name="a9" value="(B) If a manager is in the lobby">(B) If a manager is in the lobby
+
+	<br><br>
+			<input type="radio" name="a9" value="(C) Whether a position is available">(C) Whether a position is available
+
+	<br><br>
+			<input type="radio" name="a9" value="(D) When new shifts will be assigned">(D) When new shifts will be assigned
+
+
+    	</div>
+
+    	<br><br><br>
+
+    	<h4>10. What does the woman say the man should be prepared to do?</h4>
+		<div id="option">
+			<input type="radio" name="a10" value="(A) Handle customer complaints">(A) Handle customer complaints
+
+	<br><br>
+			<input type="radio" name="a10" value="(B) Work within a budget">(B) Work within a budget
+
+	<br><br>
+			<input type="radio" name="a10" value="(C) Get to know local clients">(C) Get to know local clients
+
+	<br><br>
+			<input type="radio" name="a10" value="(D) Work evening hour">(D) Work evening hour
+
+    	</div>
+
+    	<br><br><br>
+
+
+	<img src="ques8.jpg"heigh="500"width="500">
+    	<audio controls>
+        	<source src="ques8.mp3" type="audio/mp3">
+        	Your browser does not support the audio tag.       
+		</audio>
+		<h4>11. What does the woman ask the man to do?</h4>
+		<div id="option">
+			<input type="radio" name="a11" value="(A) Order some equipment">(A) Order some equipment
+
+	<br><br>
+			<input type="radio" name="a11" value="(B) Find a new vendor">(B) Find a new vendor
+
+	<br><br>
+			<input type="radio" name="a11" value="(C) Repair a laptop">(C) Repair a laptop
+
+	<br><br>
+			<input type="radio" name="a11" value="(D) Contact a job candidate">(D) Contact a job candidate
+
+
+    	</div>
+
+    	<br><br><br>
+
+    	<h4>12. What problem does the man mention?</h4>
+		<div id="option">
+			<input type="radio" name="a12" value="(A) A designer has left the company.">(A) A designer has left the company.
+
+	<br><br>
+			<input type="radio" name="a12" value="(B) A supplier has increased its prices.">(B) A supplier has increased its prices.
+
+	<br><br>
+			<input type="radio" name="a12" value="(C) A computer model has been discontinued.">(C) A computer model has been discontinued.
+
+	<br><br>
+			<input type="radio" name="a12" value="(D) A departmental budget has been reduced.">(D) A departmental budget has been reduced.
+
+    	</div>
+
+    	<br><br><br>
+
+    	<h4>13. Look at the graphic. What size screen will the man order?</h4>
+		<div id="option">
+			<input type="radio" name="a13" value="(A)">(A) 11 inches
+
+	<br><br>
+			<input type="radio" name="a13" value="(B)">(B) 13 inches
+
+	<br><br>
+			<input type="radio" name="a13" value="(C)">(C) 15 inches
+
+	<br><br>
+			<input type="radio" name="a13" value="(D)">(D) 17 inches
+
+
+    	</div>
+
+    	<button type="button" onclick="checkAnswers()">提交答案</button>
+    </form>
+
+
+    <script>
+    
+
+	function checkAnswers() {
+    var storedUsername = localStorage.getItem('username');
+	console.log('Stored username from login page: ' + storedUsername);
+    const correctAnswers = ['A', 'D', 'A', 'B', 'B', 'D', 'A', 'A', 'C', 'D', 'A', 'B', 'C'];
+
+   
+    let score = 0;
+
+    
+    for (let i = 1; i <= 13; i++) {
+        const userAnswer = document.querySelector(`input[name="a${i}"]:checked`);
+        
+        
+        if (userAnswer) {
+            const userAnswerValue = userAnswer.value.slice(1, 2); 
+            const correctAnswer = correctAnswers[i - 1]; 
+
+          
+            if (userAnswerValue === correctAnswer) {
+                score+=8;
+            }
+        }
+    }
+
+    alert(`${storedUsername}您的總分是: ${score} 分`);
+}
+</script>
+</body>
+</html>
