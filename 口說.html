@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Chat</title>
+    <style>
+
+    	body {
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background:url('jpg.jpg')no-repeat;
+            background-size:cover;
+            background-position:center;
+
+        }
+        h1{
+        	color:white;
+            align-items:center;
+
+        }
+
+        #startButton {
+            padding: 8px;
+            cursor: pointer;
+            background:transparent;
+            margin: auto;
+            border:2px solid rgba(255,255,255,.5);
+            color:white;
+            
+        }
+        #speedUpButton {
+            padding: 8px;
+            cursor: pointer;
+            background:transparent;
+            margin: auto;
+            border:2px solid rgba(255,255,255,.5);
+            color:white;
+            margin-right:20px;
+        }
+        #speedDownButton {
+            padding: 8px;
+            cursor: pointer;
+            background:transparent;
+            margin: auto;
+            border:2px solid rgba(255,255,255,.5);
+            color:white;
+            margin-right:20px;
+        }
+
+		#conversation {
+  	 	 	display: flex;
+   		 	flex-direction: column;
+   		 	align-items: flex-start; 
+}
+		#currentSpeedDisplay{
+			color:white;
+		}
+		.user-message,
+		.system-message {
+    		max-width: 80%;
+    		margin-bottom: 10px;
+    		color:white;
+}
+
+		.system-message {
+    		align-self: flex-end;
+    		color:white;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Voice Chat</h1>
+    <div id="currentSpeedDisplay">當前語速: 1.0</div>
+    <button id="speedUpButton">加快語速</button>
+	<button id="speedDownButton">減慢語速</button>
+    
+    <button id="startButton">Start Listening</button>
+    <div id="conversation"></div>
+
+    <script>
+
+        const startButton = document.getElementById('startButton');
+        const conversationDiv = document.getElementById('conversation');
+        const currentSpeedDisplay = document.getElementById('currentSpeedDisplay'); 
+
+        const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+        recognition.lang = 'en-US';
+
+
+        const speedUpButton = document.getElementById('speedUpButton');
+		const speedDownButton = document.getElementById('speedDownButton');
+		
+		let currentSpeed = 1.0;
+		const speedIncrement = 0.1;
+		speedUpButton.addEventListener('click', () => {
+    		currentSpeed += speedIncrement;
+    		updateSpeed();
+});
+		speedDownButton.addEventListener('click', () => {
+    		currentSpeed -= speedIncrement;
+    		updateSpeed();
+});
+		 startButton.addEventListener('click', () => {
+            recognition.start();
+});
+
+		function updateSpeed() {
+   
+    		const speech = new SpeechSynthesisUtterance();
+    		speech.rate = currentSpeed;
+
+    
+    		console.log(`Current Speed: ${currentSpeed}`);
+    		currentSpeedDisplay.textContent = `當前語速: ${currentSpeed.toFixed(2)}`; 
+}
+
+
+
+       
+
+        recognition.onresult = (event) => {
+            const result = event.results[0][0].transcript;
+            showUserMessage(result);
+            respondToUser(result);
+        };
+
+        function showUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('user-message');
+            messageDiv.textContent = `You: ${message}`;
+            conversationDiv.appendChild(messageDiv);
+        }
+
+        function showSystemMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('system-message');
+            messageDiv.textContent = `System: ${message}`;
+            conversationDiv.appendChild(messageDiv);
+            speakMessage(message);
+        }
+
+        function respondToUser(userInput) {
+
+            const systemResponse = getSystemResponse(userInput);
+            showSystemMessage(systemResponse);
+        }
+
+        function getSystemResponse(userInput) {
+        	const greetings = ['hello', 'what\'s your name','what’s up','hi','Hello', 'What\'s your name','What’s up','Hi'];
+    
+    		if (greetings.some(greetings => userInput.includes(greetings))) {
+        	const responses = ["hi my name is Kennys.It's a pleasure to chat with you.", "hi my name is Kennys.", "i'm Kennys. what's your name? "];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings4 = ['me too','my name is Diego','hi my name is Diego','Me too','My name is Diego','Hi my name is Diego'];
+    
+    		if (greetings4.some(greetings4 => userInput.includes(greetings4))) {
+        	const responses = ["Good to meet you,what you up to today "];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}
+
+            const greetings1 = ['my name is Diego,how are you','how are you', 'how do you do','how did it go today?','My name is Diego,how are you','How are you', 'How do you do','How did it go today?'];
+    
+    		if (greetings1.some(greetings1 => userInput.includes(greetings1))) {
+        	const responses = ["Nothing, how about you?  ", "I'm doing well,how about you?", "I get by. how about you?"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings2 = ['I\'m fine', 'I\'m good','Not bad','great','good','nice','excellent,i\'m fine', 'i\'m good','not bad','Great','Good','Nice','Excellent'];
+    
+    		if (greetings2.some(greetings2 => userInput.includes(greetings2))) {
+        	const responses = ["that's great. whats your plan for today."];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+
+    		const greetings3 = ['I\'m feel bad','I have a bad day','sucks','I feel bad','I mean I feel sad'];
+
+    		if (greetings3.some(greetings3 => userInput.includes(greetings3))) {
+        	const responses = ["that's sad. what is bothering you?"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings5 = ['I have no plan today','I don\'t know','i have no plan today','i don\'t know'];
+
+    		if (greetings5.some(greetings5 => userInput.includes(greetings5))) {
+        	const responses = ["I can give you some suggestions, do you want to hear it? "];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+
+    		const greetings9 = ['the lessons gets me exhausted','The lessons gets me exhausted'];
+    		if (greetings9.some(greetings9 => userInput.includes(greetings9))) {
+        	const responses = ["Thats bad just relax find something interested to do"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings6 = ['sure','why not','Sure','Why not'];
+    		if (greetings6.some(greetings6 => userInput.includes(greetings6))) {
+        	const responses = ["Fantastic,You can use our suggested study materials and films.Thats very funny"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings7 = ['thank you','I will','yeah','Thank you','i will','Yeah'];
+    		if (greetings7.some(greetings7 => userInput.includes(greetings7))) {
+        	const responses = ["Your welcome,have a nice day!","your welcome,have a nice day!"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}			
+    		const greetings12 = ['I will','yeah','i will','Yeah'];
+    		if (greetings12.some(greetings12 => userInput.includes(greetings12))) {
+        	const responses = ["Have a nice day then!","have a nice day then!"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}
+
+			const greetings8 = ['I\'m going to work','I\'m doing homework','I\'m gonna do my homework','I\'m going to do my homework','i\'m going to work','i\'m doing homework','i\'m gonna do my homework','i\'m going to do my homework'];
+    
+    		if (greetings8.some(greetings8 => userInput.includes(greetings8))) {
+        	const responses = ["That's rough,you have hard worked"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+
+    		const greetings10 = ['I was broke up with my girlfriend','I was broke up with my girlfriend yesterday','I was broke up with my girlfriend last week','i was broke up with my girlfriend','i was broke up with my girlfriend yesterday','i was broke up with my girlfriend last week'];
+    
+    		if (greetings10.some(greetings10 => userInput.includes(greetings10))) {
+        	const responses = ['I’m sorry you have to go through this,but \"win a few, lose a few. That’s life.\"'];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings11 = ['I don\'t understand','i don\'t understand'];
+    
+    		if (greetings11.some(greetings11 => userInput.includes(greetings11))) {
+        	const responses = ["Means everything have posibility to happend in everyone\'s life, so its not a big deal"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+    }
+    		const greetings13 = ['that\'s helpful thank you','that\'s help','it\'s helpful','you are my mental teacher','That\'s helpful thank you','That\'s help','It\'s helpful','You are my mental teacher'];
+    		if (greetings13.some(greetings13 => userInput.includes(greetings13))) {
+        	const responses = ["I\'m glad it help you"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}
+    		const greetings14 = ['do you know world of warcraft?','do you know call of duty?','Do you know world of warcraft?','Do you know call of duty?'];
+    		if (greetings14.some(greetings14 => userInput.includes(greetings14))) {
+        	const responses = ["Sure its a online game on battlenet."];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}
+    		const greetings15 = ['do you know LOL','do you know League of Legend','do you know TFT','do you know teamfight tactics','do you know League of Legends','Do you know LOL','Do you know League of Legend','Do you know TFT','Do you know teamfight tactics','Do you know League of Legends'];
+    		if (greetings15.some(greetings15 => userInput.includes(greetings15))) {
+        	const responses = ["Sure its a online game on Riot."];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}
+			const greetings16 = ['how can I be rich men','how can I be rich man','how can I be rich','How can I be rich men','How can I be rich man','How can I be rich'];
+    		if (greetings16.some(greetings16 => userInput.includes(greetings16))) {
+        	const responses = ["G E T , A ,J O B"];
+        	const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        	return randomResponse;
+}			
+
+    		 else {
+                return "I didn't understand that.";
+            }
+        }
+
+    function speakMessage(message) {
+    	const speech = new SpeechSynthesisUtterance(message);
+    	speech.lang = 'en-US';
+
+   
+    	speech.rate = currentSpeed;
+
+   
+    	speech.pitch = 1.0;
+
+   
+    	window.speechSynthesis.speak(speech);
+    
+}
+    </script>
+</body>
+</html>
